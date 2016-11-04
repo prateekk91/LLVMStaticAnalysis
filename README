@@ -1,0 +1,29 @@
+Run the make llvm command as in Section 1 of the project here: https://cseweb.ucsd.edu/classes/sp14/cse231-a/proj1.html.
+Ensure that the llvm environment as provided in the project is set up.
+
+This folder contains the Data Analysis Framework, Lattice Points and Flow Functions for the various analysis
+
+The folder has 3 scripts:
+1. runConstantProp.sh
+2. runCSE.sh
+3. runRangeAnalysis.sh
+
+The benchmarks are contained in the Benchmarks folder inside the current folder.
+
+To run the above scripts on the provided benchmarks, please proceed as follows:
+
+./run(*).sh "benchmarkName" (without quotes)
+e.g, if you would like to run constant propagation on benchmark constantPropTest, the script it as follows:
+./runConstantProp.sh constantPropTest
+
+We run mem2reg on each benchmark before running the analysis. You may find the ll files before and after application of analysis and transformation in the Benchmarks folder.
+
+E.g, on running the script above, the following files will be generated in the Benchmark folder:
+-constantPropTest_mem2reg.ll
+-constantPropTest_constantProp.ll
+where the former is the output of mem2reg pass, and the latter is the output for constant propagation pass.
+
+Similar is the case for Range Analysis and Common SubExpression Elimination pass.
+The explanation of the output is given when the script is executed.
+
+The description, speciality of each benchmark is provided in the banchmarks as comments.
